@@ -1,5 +1,1 @@
 https://talha125-git.github.io/Projects-count-numbers/numbers-tcss.html
-git init 
-git add .
-git commit -m "add live link"
-git push -u origin main

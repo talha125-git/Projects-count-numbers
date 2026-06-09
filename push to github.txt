@@ -1,0 +1,4 @@
+git init 
+git add .
+git commit -m "add Push to github cmds"
+git push -u origin main
