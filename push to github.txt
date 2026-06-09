@@ -1,4 +1,4 @@
 git init 
 git add .
-git commit -m " apply favicon img"
+git commit -m "update number value for working hours spent"
 git push -u origin main
