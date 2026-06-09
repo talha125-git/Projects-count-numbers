@@ -1,4 +1,4 @@
 git init 
 git add .
-git commit -m "add Push to github cmds"
+git commit -m "add favicon"
 git push -u origin main
