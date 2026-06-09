@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numbers Starter</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+    <section class="py-20 w-[90vw] max-w-[1170px] mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- single number -->
+        <article class="bg-white p-4 md:p-8 rounded border-b-4 border-yellow-500">
+            <span class="text-6xl font-bold leading-snug number" data-value="30">0</span>
+            <p class="mt-4 text-xl capitalize">Succeeded Projects</p>
+        </article>
+        <!-- end of single number -->
+        <!-- single number -->
+        <article class="bg-white p-4 md:p-8 rounded border-b-4 border-teal-500">
+            <span class="text-6xl font-bold leading-snug number" data-value="2140">0</span>
+            <p class="mt-4 text-xl capitalize">Working Hours Spent</p>
+        </article>
+        <!-- end of single number -->
+        <!-- single number -->
+        <article class="bg-white p-4 md:p-8 rounded border-b-4 border-purple-700">
+            <span class="text-6xl font-bold leading-snug number" data-value="150">0</span>
+            <p class="mt-4 text-xl capitalize">Happy Clients</p>
+        </article>
+        <!-- end of single number -->
+    </section>
+    
+
+    <script>
+        const items = [...document.querySelectorAll('.number')];
+
+        const updateCount = (el) => {
+            const value = parseInt(el.dataset.value);
+            const increment = Math.ceil(value / 1000);
+
+            let initialValue = 0;
+            const increaseCount = setInterval(() => {
+                initialValue += increment;
+
+                if (initialValue > value) {
+                    el.textContent = `${value}+ `;
+                    clearInterval(increaseCount);
+                    return;
+                }
+
+                el.textContent = `${initialValue}+`
+            }, 1);
+        };
+
+        items.forEach((item) => {
+            updateCount(item);
+        });
+    </script>
+</body>
+
+</html>
